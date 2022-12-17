@@ -13,3 +13,9 @@
   	- SISGERP17122022110458PES
 
       > :dart: Feature: Implementar Protótipo da Tela de Cadastro de Pessoa
+
+  	- SISGERP17122022112102PES
+
+      > :dart: Feature: Implementar Cadastro de Pessoa
+	  > :dart: Feature: Implementar Validações de Cadastro de Pessoa
+

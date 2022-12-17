@@ -1,4 +1,5 @@
 "use strict";
+/*
 // Cicle Chart
 Circles.create({
 	id:           'task-complete',
@@ -286,3 +287,4 @@ var myTopProductsChart = new Chart(topProductsChart, {
 		}
 	}
 });
+*/
