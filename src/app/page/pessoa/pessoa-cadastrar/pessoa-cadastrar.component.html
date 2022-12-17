@@ -1,1 +1,61 @@
-<p>pessoa-cadastrar works!</p>
+<div class="panel-header bg-primary-gradient">
+    <div class="page-inner py-5">
+        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row"></div>
+    </div>
+</div>
+
+<div class="page-inner mt--5">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Cadastro de Pessoa</div>
+                </div>
+                <div class="card-body">
+
+                    <form class="form">
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-lg-3">
+                                <div class="form-group">
+                                    <label for="categoria-pessoa">Categoria da Pessoa</label>
+                                    <select id="categoria-pessoa" name="categoria-pessoa" class="form-control">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-9">
+                                <div class="form-group">
+                                    <label for="nome-pessoa">Nome da Pessoa</label>
+                                    <input type="text" id="nome-pessoa" name="nome-pessoa" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row"><br /></div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-lg-10">
+                                <button [disabled]="true" class="btn btn-primary btn-block me-1 mb-1">Cadastrar Dados da Pessoa</button>
+                            </div>
+
+                            <div class="col-md-6 col-lg-2">
+                                <button class="btn btn-danger btn-block btn-border me-1 mb-1">Cancelar</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

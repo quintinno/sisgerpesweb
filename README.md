@@ -8,4 +8,8 @@
 
   	- SISGERP17122022104134PES
 
-      > :dart: Feature: Configurar template Boostrap
+      > :dart: Feature: Configurar Template Boostrap
+
+  	- SISGERP17122022110458PES
+
+      > :dart: Feature: Implementar Protótipo da Tela de Cadastro de Pessoa
