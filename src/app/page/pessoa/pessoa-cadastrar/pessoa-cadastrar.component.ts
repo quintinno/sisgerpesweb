@@ -13,6 +13,10 @@ export class PessoaCadastrarComponent implements OnInit {
 
   public isApresentarMensagemSucesso: boolean = false;
 
+  public isApresentarMensagemErro: boolean = false;
+
+  public mensagemErro: string = "";
+
   public formBuilderGroup = this.formBuilder.group({
     codigo: [{ value: "", disable: true }],
     tipo: ["", Validators.required ],
@@ -41,11 +45,13 @@ export class PessoaCadastrarComponent implements OnInit {
       nome: this.formBuilderGroup.controls["nome"].value
     }
 
-      this.pessoaService.cadastrarPessoa(pessoaModel).subscribe( response => {
-        this.apresentarMensagemSucesso();
-        this.clearFormBuilderGroup();
-        console.log("Pessoa Cadastrada com Sucesso!");
-      });
+    this.pessoaService.cadastrarPessoa(pessoaModel).subscribe( response => {
+      this.apresentarMensagemSucesso();
+      this.clearFormBuilderGroup();
+    }, error => {
+      console.log(error);
+      this.apresentarMensagemErro(error);
+    });
 
   }
 
@@ -53,6 +59,14 @@ export class PessoaCadastrarComponent implements OnInit {
     this.isApresentarMensagemSucesso = true;
     setTimeout(() => {
       this.isApresentarMensagemSucesso = false;
+    }, 4000);
+  }
+
+  private apresentarMensagemErro(mensagem: string) {
+    this.mensagemErro = mensagem;
+    this.isApresentarMensagemErro = true;
+    setTimeout(() => {
+      this.isApresentarMensagemErro = false;
     }, 4000);
   }
 

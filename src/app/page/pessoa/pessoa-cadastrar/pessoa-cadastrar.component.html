@@ -65,8 +65,16 @@
 
 <div *ngIf="isApresentarMensagemSucesso" data-notify="container" class="col-10 col-xs-11 col-sm-4 alert alert-success"
   role="alert" data-notify-position="top-right"
-  style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: all 0.5s ease-in-out 0s; z-index: 1031; top: 20px; right: 20px;">
+  style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: all 1s ease-in-out 2s; z-index: 1031; top: 20px; right: 20px;">
   <span data-notify="icon" class="none">
   </span>
   <span data-notify="title">Mensagem</span> <span data-notify="message">Pessoa cadastrada com Sucesso!</span>
+</div>
+
+<div *ngIf="isApresentarMensagemErro" data-notify="container" class="col-10 col-xs-11 col-sm-4 alert alert-danger"
+  role="alert" data-notify-position="top-right"
+  style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: all 1s ease-in-out 2s; z-index: 1031; top: 20px; right: 20px;">
+  <span data-notify="icon" class="none">
+  </span>
+  <span data-notify="title">Mensagem</span> <span data-notify="message">{{mensagemErro}}</span>
 </div>
