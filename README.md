@@ -20,3 +20,5 @@
 	  
 	  > :dart: Feature: Implementar Validações de Cadastro de Pessoa
 
+	  > :dart: Feature: Implementar tela de detalhamento
+

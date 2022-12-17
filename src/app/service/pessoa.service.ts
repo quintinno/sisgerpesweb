@@ -25,6 +25,10 @@ export class PessoaService {
     return this.httpClient.post(API.base.concat(API.endpoint_pessoa), pessoaModel).pipe(catchError(this.handleError));
   }
 
+  public recuperarPessoa() : Observable<any[]> {
+    return this.httpClient.get<any[]>(API.base.concat(API.endpoint_pessoa)).pipe(catchError(this.handleError));
+  }
+
   public handleError(httpErrorResponse: HttpErrorResponse) {
     let errorMessage = '';
     if (httpErrorResponse.error instanceof ErrorEvent) {

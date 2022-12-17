@@ -1,0 +1,191 @@
+<div class="panel-header bg-primary-gradient">
+    <div class="page-inner py-5">
+        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row"></div>
+    </div>
+</div>
+
+<div class="main-panel">
+    <div class="container">
+        <div class="page-inner mt--5">
+            <div class="row">
+                    
+                <div class="col-md-8">
+
+                    <div class="card card-with-nav">
+
+                        <div class="card-header">
+                            <div class="row row-nav-line">
+                                <ul class="nav nav-tabs nav-line nav-color-secondary w-100 pl-3" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link active show" data-toggle="tab" href="#principal" aria-selected="true" role="tab">Dados Básicos</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#endereco" aria-selected="false" role="tab">Endereço</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contato" aria-selected="false" role="tab">Contatos</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#configuracao" aria-selected="false" role="tab">Configurações</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-content">
+
+                                <div id="principal" *ngIf="true" class="tab-pane card-body">
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
+                                            <div class="form-group form-group-default">
+                                                <label>Nome</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Name"
+                                                    value="Priscilla Mariano">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-group-default">
+                                                <label>E-mail</label>
+                                                <input type="email" class="form-control" name="email" placeholder="Name"
+                                                    value="priscilla@gmail.com">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <div class="form-group form-group-default">
+                                                <label>Data de Nascimento</label>
+                                                <input type="text" class="form-control" id="datepicker" name="datepicker"
+                                                    value="03/21/1990" placeholder="Data de Nascimento">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-group-default">
+                                                <label>Genero</label>
+                                                <select class="form-control" id="gender">
+                                                    <option>Masculino</option>
+                                                    <option>Feminino</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-group-default">
+                                                <label>Phone</label>
+                                                <input type="text" class="form-control" value="+55 (61) 908-765-678"
+                                                    name="phone" placeholder="Telefone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-group-default">
+                                                <label>Endereço Principal</label>
+                                                <input type="text" class="form-control"
+                                                    value="Setor Tradicional Lote 22 - Brazlândia - DF" name="address"
+                                                    placeholder="Address">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right mt-3 mb-3">
+                                        <button class="btn btn-success">Salvar Dados da Pessoa</button>
+                                    </div>
+
+                                </div>
+    
+                                <div id="endereco" class="tab-pane card-body">
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-group-default">
+                                                <label>Código Postal (CEP)</label>
+                                                <input type="text" name="cep" class="form-control" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-group-default">
+                                                <label>Endereço</label>
+                                                <input type="text" class="form-control"
+                                                    value="Setor Tradicional Lote 22 - Brazlândia - DF" name="address"
+                                                    placeholder="Address">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <div class="form-group form-group-default">
+                                                <label>País</label>
+                                                <select class="form-control" id="gender">
+                                                    <option>Brasil</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-group-default">
+                                                <label>Estado</label>
+                                                <select class="form-control" id="gender">
+                                                    <option>Distrito Federal</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-group-default">
+                                                <label>Cidade</label>
+                                                <select class="form-control" id="gender">
+                                                    <option>Brasília</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right mt-3 mb-3">
+                                        <button class="btn btn-success">Salvar Dados da Pessoa</button>
+                                    </div>
+                                </div>
+    
+                                <div id="contato" class="tab-pane card-body">
+                                    <h1>Contatos</h1>
+                                </div>
+    
+                                <div id="configuracao" class="tab-pane card-body">
+                                    <h1>Configuracao</h1>
+                                </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-header" style="background-image: url('../assets/img/blogpost.jpg')">
+                            <div class="profile-picture">
+                                <div class="avatar avatar-xl">
+                                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="user-profile text-center">
+                                <div class="name">Priscila Mariano</div>
+                                <div class="job"></div>
+                                <div class="social-media">
+                                    <a class="btn btn-info btn-twitter btn-sm btn-link" href="#">
+                                        <span class="btn-label just-icon"><i class="flaticon-twitter"></i> </span>
+                                    </a>
+                                    <a class="btn btn-info btn-sm btn-link" rel="publisher" href="#">
+                                        <span class="btn-label just-icon"><i class="flaticon-google-plus"></i> </span>
+                                    </a>
+                                    <a class="btn btn-info btn-sm btn-link" rel="publisher" href="#">
+                                        <span class="btn-label just-icon"><i class="flaticon-facebook"></i> </span>
+                                    </a>
+                                    <a class="btn btn-info btn-sm btn-link" rel="publisher" href="#">
+                                        <span class="btn-label just-icon"><i class="flaticon-dribbble"></i> </span>
+                                    </a>
+                                </div>
+                                <div class="view-profile">
+                                    <a href="#" class="btn btn-danger btn-block">Remover Pessoa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
