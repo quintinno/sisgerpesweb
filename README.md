@@ -22,3 +22,5 @@
 
 	  > :dart: Feature: Implementar tela de detalhamento
 
+	  > :dart: Feature: Implementar Editar dados da Pessoa
+

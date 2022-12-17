@@ -29,6 +29,10 @@ export class PessoaService {
     return this.httpClient.get<any[]>(API.base.concat(API.endpoint_pessoa)).pipe(catchError(this.handleError));
   }
 
+  public pesquisarPessoa(codigoPessoa: number) : Observable<any> {
+    return this.httpClient.get<any>(API.base.concat(API.endpoint_pessoa).concat(`/${codigoPessoa}`)).pipe(catchError(this.handleError));
+  }
+
   public handleError(httpErrorResponse: HttpErrorResponse) {
     let errorMessage = '';
     if (httpErrorResponse.error instanceof ErrorEvent) {

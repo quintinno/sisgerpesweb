@@ -8,6 +8,7 @@ import { PessoaCadastrarComponent } from './page/pessoa/pessoa-cadastrar/pessoa-
 import { PessoaDetalharComponent } from './page/pessoa/pessoa-detalhar/pessoa-detalhar.component';
 import { PessoaComponent } from './page/pessoa/pessoa.component';
 import { PrincipalComponent } from './page/principal/principal.component';
+import { PessoaEditarComponent } from './page/pessoa/pessoa-editar/pessoa-editar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PrincipalComponent } from './page/principal/principal.component';
     PrincipalComponent,
     PessoaComponent,
     PessoaCadastrarComponent,
-    PessoaDetalharComponent
+    PessoaDetalharComponent,
+    PessoaEditarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,80 @@
+<div class="panel-header bg-primary-gradient">
+  <div class="page-inner py-5">
+      <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row"></div>
+  </div>
+</div>
+
+<div class="page-inner mt--5">
+
+  <div class="row">
+
+      <div class="col-md-12">
+
+          <div class="card">
+              <div class="card-header">
+                  <div class="card-title">Cadastro de Pessoa</div>
+              </div>
+              <div class="card-body">
+
+                  <form [formGroup]="formBuilderGroup" class="form">
+
+                      <div class="row">
+
+                          <div class="col-md-6 col-lg-3">
+                              <!-- <div [ngClass]="!formBuilderGroup.get('tipo')?.hasError('required') ? 'form-group has-success' : 'form-group has-error has-feedback'"> -->
+                                  <div class="form-group">
+                                  <label for="tipo">Tipo Pessoa</label>
+                                  <select id="tipo" name="tipo" formControlName="tipo" class="form-control" style="height: 42px !important;">
+                                      <option value="">Selecione</option>
+                                      <option *ngFor="let item of tipoPessoaList" [value]="item.codigo"> {{ item.descricao }} </option>
+                                  </select>
+                              </div>
+                              <span *ngIf="formBuilderGroup.get('tipo')?.touched && formBuilderGroup.get('tipo')?.hasError('required')" class="form-group text-danger">Campo Obrigatório</span>
+                          </div>
+                          
+                          <div class="col-md-6 col-lg-9">
+                              <!-- <div [ngClass]="!formBuilderGroup.get('nome')?.hasError('required') ? 'form-group has-success' : 'form-group has-error has-feedback'"> -->
+                                  <div class="form-group">
+                                  <label for="nome">Nome da Pessoa</label>
+                                  <input type="text" id="nome" name="nome" formControlName="nome" class="form-control">
+                              </div>
+                              <span *ngIf="formBuilderGroup.get('nome')?.touched && formBuilderGroup.get('nome')?.hasError('required')" class="form-group text-danger">Campo Obrigatório</span>
+                          </div>
+
+                      </div>
+
+                      <div class="row" style="margin-top: 30px;">
+
+                          <div class="col-md-6 col-lg-10">
+                              <button (click)="cadastrarPessoa()" class="btn btn-primary btn-block me-1 mb-1">Cadastrar Dados da Pessoa</button>
+                          </div>
+
+                          <div class="col-md-6 col-lg-2" routerLink="/pessoa">
+                              <button class="btn btn-danger btn-block btn-border me-1 mb-1">Cancelar</button>
+                          </div>
+
+                      </div>
+
+                  </form>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="isApresentarMensagemSucesso" data-notify="container" class="col-10 col-xs-11 col-sm-4 alert alert-success"
+role="alert" data-notify-position="top-right"
+style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: all 1s ease-in-out 2s; z-index: 1031; top: 20px; right: 20px;">
+<span data-notify="icon" class="none">
+</span>
+<span data-notify="title">Mensagem</span> <span data-notify="message">Pessoa cadastrada com Sucesso!</span>
+</div>
+
+<div *ngIf="isApresentarMensagemErro" data-notify="container" class="col-10 col-xs-11 col-sm-4 alert alert-danger"
+  role="alert" data-notify-position="top-right"
+  style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: all 1s ease-in-out 2s; z-index: 1031; top: 20px; right: 20px;">
+  <span data-notify="icon" class="none">
+  </span>
+  <span data-notify="title">Mensagem</span> <span data-notify="message">{{mensagemErro}}</span>
+</div>
