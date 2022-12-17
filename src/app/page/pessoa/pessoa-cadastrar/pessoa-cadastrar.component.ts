@@ -16,7 +16,7 @@ export class PessoaCadastrarComponent implements OnInit {
   public formBuilderGroup = this.formBuilder.group({
     codigo: [{ value: "", disable: true }],
     tipo: ["", Validators.required ],
-    nome: ["", Validators.required ],
+    nome: ["", [Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.minLength(3), Validators.maxLength(100)] ],
   });
 
   constructor (
@@ -34,19 +34,18 @@ export class PessoaCadastrarComponent implements OnInit {
     });
   }
 
-  public saveOne() {
+  public cadastrarPessoa() {
 
     const pessoaModel = {
-      tipo: {
-        codigo: this.formBuilderGroup.controls["tipo"].value
-      },
+      tipo: { codigo: this.formBuilderGroup.controls["tipo"].value },
       nome: this.formBuilderGroup.controls["nome"].value
     }
 
-    this.pessoaService.cadastrarPessoa(pessoaModel).subscribe( response => {
-      this.apresentarMensagemSucesso();
-      this.clearFormBuilderGroup();
-    });
+      this.pessoaService.cadastrarPessoa(pessoaModel).subscribe( response => {
+        this.apresentarMensagemSucesso();
+        this.clearFormBuilderGroup();
+        console.log("Pessoa Cadastrada com Sucesso!");
+      });
 
   }
 

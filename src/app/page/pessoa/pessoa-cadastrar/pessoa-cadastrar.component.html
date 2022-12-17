@@ -21,20 +21,22 @@
                         <div class="row">
 
                             <div class="col-md-6 col-lg-3">
-                                <div class="form-group">
+                                <div [ngClass]="!formBuilderGroup.get('tipo')?.hasError('required') ? 'form-group has-success' : 'form-group has-error has-feedback'">
                                     <label for="tipo">Tipo Pessoa</label>
                                     <select id="tipo" name="tipo" formControlName="tipo" class="form-control">
                                         <option value="">Selecione</option>
                                         <option *ngFor="let item of tipoPessoaList" [value]="item.codigo"> {{ item.descricao }} </option>
                                     </select>
                                 </div>
+                                <span *ngIf="formBuilderGroup.get('tipo')?.hasError('required')" class="form-group text-danger">Campo Obrigatório</span>
                             </div>
                             
                             <div class="col-md-6 col-lg-9">
-                                <div class="form-group">
+                                <div [ngClass]="!formBuilderGroup.get('nome')?.hasError('required') ? 'form-group has-success' : 'form-group has-error has-feedback'">
                                     <label for="nome">Nome da Pessoa</label>
                                     <input type="text" id="nome" name="nome" formControlName="nome" class="form-control">
                                 </div>
+                                <span *ngIf="formBuilderGroup.get('nome')?.hasError('required')" class="form-group text-danger">Campo Obrigatório</span>
                             </div>
 
                         </div>
@@ -44,10 +46,10 @@
                         <div class="row">
 
                             <div class="col-md-6 col-lg-10">
-                                <button (click)="saveOne()" class="btn btn-primary btn-block me-1 mb-1">Cadastrar Dados da Pessoa</button>
+                                <button (click)="cadastrarPessoa()" class="btn btn-primary btn-block me-1 mb-1">Cadastrar Dados da Pessoa</button>
                             </div>
 
-                            <div class="col-md-6 col-lg-2">
+                            <div class="col-md-6 col-lg-2" routerLink="/principal">
                                 <button class="btn btn-danger btn-block btn-border me-1 mb-1">Cancelar</button>
                             </div>
 
