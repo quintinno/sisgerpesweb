@@ -2082,7 +2082,7 @@ body {
 
 /*     Card     */
 .card, .card-light {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #ffffff;
   margin-bottom: 30px;
   -webkit-box-shadow: 2px 6px 15px 0px rgba(69, 65, 78, 0.1);
