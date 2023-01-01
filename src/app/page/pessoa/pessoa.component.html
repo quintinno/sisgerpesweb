@@ -24,15 +24,13 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Tipo de Pessoa</th>
                                 <th scope="col">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of pessoaList">
-                                <td>{{item.codigo}}</td>
+                            <tr *ngFor="let item of pessoaPaginationList">
                                 <td>{{item.nome}}</td>
                                 <td>{{item.tipoPessoa}}</td>
                                 <td>
@@ -43,9 +41,29 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="row">
+
+                  <div class="col-md-6 d-flex justify-content-center">
+
+                    <div class="form-inline float-left mr-1">
+                      <select [value]="quantidadePorPagina" (change)="changePagina($event)" class="form-control">
+                        <option value="5">5 Por Página</option>
+                        <option value="10">10 Por Página</option>
+                        <option value="20">20 Por Página</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="btn-group float-right">
+                    <button *ngFor="let page of pageNumber" (click)="mudarPagina(page)" class="btn btn-outline-primary">
+                      {{ page }}
+                    </button>
+                  </div>
+
+                </div>
+
             </div>
-
         </div>
-
     </div>
 </div>
