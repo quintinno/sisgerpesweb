@@ -24,13 +24,13 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Tipo de Pessoa</th>
-                                <th scope="col">Ações</th>
+                                <th scope="col" style="width: 50%">Nome</th>
+                                <th scope="col"style="width: 30%">Tipo de Pessoa</th>
+                                <th scope="col" style="width: 20%; text-align: center;">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of pessoaPaginationList">
+                            <tr *ngFor="let item of pessoaList | slice: (page-1) * pageSize : page * pageSize">
                                 <td>{{item.nome}}</td>
                                 <td>{{item.tipoPessoa}}</td>
                                 <td>
@@ -40,26 +40,10 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
 
-                <div class="row">
-
-                  <div class="col-md-6 d-flex justify-content-center">
-
-                    <div class="form-inline float-left mr-1">
-                      <select [value]="quantidadePorPagina" (change)="changePagina($event)" class="form-control">
-                        <option value="5">5 Por Página</option>
-                        <option value="10">10 Por Página</option>
-                        <option value="20">20 Por Página</option>
-                      </select>
+                    <div style="display: flex; justify-content: center;">
+                        <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="pageLength"></ngb-pagination>
                     </div>
-                  </div>
-
-                  <div class="btn-group float-right">
-                    <button *ngFor="let page of pageNumber" (click)="mudarPagina(page)" class="btn btn-outline-primary">
-                      {{ page }}
-                    </button>
-                  </div>
 
                 </div>
 

@@ -24,3 +24,5 @@
 
 	  > :dart: Feature: Implementar Editar dados da Pessoa
 
+	  > :dart: Feature: Implementar Paginação de dados da Pessoa
+
